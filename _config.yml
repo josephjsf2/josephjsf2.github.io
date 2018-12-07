@@ -1,0 +1,34 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+
+# Permalinks
+permalink:        pretty
+# relative_permalinks: true
+
+# Setup
+title:            Joseph's 筆記
+tagline:          '靠筆記彌補記憶'
+description:      ''
+url:              https://josephjsf.github.io/
+baseurl:          "/"
+
+author:
+  name:           'Joseph'
+  url:            https://josephjsf.github.io
+
+paginate:         10
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/josephjsf
+
+
+paginate_path: "page:num"
+plugins: [jekyll-paginate, jekyll-gist, jekyll-seo-tag,jekyll-sitemap]
+
+# read more tag
+excerpt_separator: <!--more-->
