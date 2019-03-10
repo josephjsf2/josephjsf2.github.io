@@ -32,3 +32,8 @@ plugins: [jekyll-paginate, jekyll-gist, jekyll-seo-tag,jekyll-sitemap]
 
 # read more tag
 excerpt_separator: <!--more-->
+
+---
+layout: default
+comments: true
+---
