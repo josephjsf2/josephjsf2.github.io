@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: 文章列表
 ---
 
 <div class="posts">
@@ -15,7 +15,7 @@ title: Home
     <span class="post-date">{{ post.date | date_to_string }}</span>
     {{ post.excerpt }}
     {% if post.excerpt != post.content %}
-    <a href="{{ post.url }}#disqus_thread">繼續閱讀</a>
+    <a href="{{ post.url }}">繼續閱讀</a>
     {% endif %}
   </div>
   {% endfor %}
