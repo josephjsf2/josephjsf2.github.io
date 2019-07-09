@@ -314,8 +314,8 @@ Observer 就是當程式在訂閱 Observable時傳入的三個 callback function
 所以當程式在做訂閱時，傳入的內容就是Observer需要的屬性：
 
 ```typescript
-	// 參數依序會是 next、error與complete 
-	of(1,2,3).subscribe(
+    // 參數依序會是 next、error與complete 
+    of(1,2,3).subscribe(
       val => {},
       err => {},
       () => {}
