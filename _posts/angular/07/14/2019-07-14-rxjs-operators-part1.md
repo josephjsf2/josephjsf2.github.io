@@ -130,6 +130,7 @@ Observable Operator使用方式。
       tap(val => console.log(val))
     ).subscribe()
 ```
+[stackblitz](https://stackblitz.com/edit/angular-qfmhj3)
 
 ### 7. first
 
