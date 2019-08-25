@@ -2,6 +2,7 @@
 title: Java Spring Framework 筆記 - Bean configutation file 設定
 layout: post
 categories: Java
+unsplashTag: 'code'
 tags:
 - Java
 - 筆記

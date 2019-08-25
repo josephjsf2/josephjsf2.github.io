@@ -2,10 +2,10 @@
 title: SQL Server 新增 Mirror DB筆記
 layout: post
 categories: SQL Server
+unsplashTag: 'code,database'
 tags:
 - SQL Server
 - Mirror
-- data structure
 
 
 ---

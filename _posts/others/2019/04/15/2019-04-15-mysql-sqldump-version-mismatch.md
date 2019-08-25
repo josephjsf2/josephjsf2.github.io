@@ -2,6 +2,7 @@
 title: 遇到 mysqldump Version Mismatch問題解決方法
 layout: post
 categories: Mysql
+unsplashTag: 'code,mysql,database'
 tags:
 - mysql
 

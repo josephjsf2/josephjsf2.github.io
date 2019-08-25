@@ -2,6 +2,7 @@
 title: 資料結構與演算法：Binary Search Tree 二元搜索樹
 layout: post
 categories: data structure and algorithm
+unsplashTag: 'code,algorithm'
 tags:
 - tree
 - binary search tree
