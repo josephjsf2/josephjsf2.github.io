@@ -1,0 +1,49 @@
+---
+layout: page
+title: Tags
+---
+<hr />
+{% assign alldocs = site.posts | uniq  %}
+{% assign grouptag =  alldocs | map: 'tags' | join: ','  | split: ',' | group_by: tag  %}
+{%- for tag in grouptag -%}
+{%- if tag.size > 3-%}
+<h2>{{- tag.name -}} - {{tag.size}}</h2>
+{%- for post in alldocs -%}
+<ul style="margin-bottom: 0em;">
+    {% if post.tags contains tag.name  %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} )
+    </li>
+    {% endif %}
+</ul>
+{%- endfor -%}
+{% endif %}
+{%- endfor -%}
+
+<h3>
+    <a onclick="openMoreTags()" id="moreLink">more</a>
+</h3>
+<div id="moreTags" style="visibility: hidden;">
+    {% assign alldocs = site.posts | uniq  %}
+    {% assign grouptag =  alldocs | map: 'tags' | join: ','  | split: ',' | group_by: tag  %}
+    {%- for tag in grouptag -%}
+    {%- if tag.size <= 3-%}
+    <h2>{{- tag.name -}} - {{tag.size}}</h2>
+    {%- for post in alldocs -%}
+    <ul style="margin-bottom: 0em;">
+        {% if post.tags contains tag.name  %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} )
+        </li>
+        {% endif %}
+    </ul>
+    {%- endfor -%}
+    {% endif %}
+    {%- endfor -%}
+</div>
+<script>
+    function openMoreTags() {
+        document.getElementById('moreTags').style.visibility = 'visible';
+        document.getElementById('moreLink').style.visibility = 'hidden';
+    }
+</script>

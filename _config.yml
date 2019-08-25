@@ -28,7 +28,15 @@ github:
 
 
 paginate_path: "page:num"
-plugins: [jekyll-paginate, jekyll-gist, jekyll-seo-tag,jekyll-sitemap]
+plugins: [jekyll-paginate, jekyll-gist, jekyll-seo-tag,jekyll-sitemap,jekyll/tagging]
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
+tag_feed_layout: tag_feed
+tag_feed_dir: tag
+tag_page_data:
+  sitemap: false
 
 # read more tag
 excerpt_separator: <!--more-->
