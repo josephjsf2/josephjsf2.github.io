@@ -16,7 +16,7 @@ tags:
 
 # Binary Tree 二元樹
 
-<img src="https://imgur.com/E1XJ4jK.png" />
+<img  class="img-fluid" src="https://imgur.com/E1XJ4jK.png" />
 
 + 每個Node最多只能有2個 child node
 + Level i 最大節點數： 2^(i-1), i>0，如level 3的Node數最多為 2^(3-1) = 4，如上圖之 DEFG
@@ -38,7 +38,7 @@ tags:
 優點是程式運行速度快，可以快速定位到node
 缺點是相當浪費空間，若非完美二元樹，則陣列中會存在許多空間未被使用。如果元素數量超過陣列大小時，重建陣列，會較為耗時。
 
-<img src="https://imgur.com/XuP8OdY.png" />
+<img  class="img-fluid" src="https://imgur.com/XuP8OdY.png" />
 
 #### 2. Linked List 
 
@@ -66,7 +66,7 @@ class Node<T>{
 
 如下列BST，35是 BST中的root node，可以注意到 35的右邊所有node 的value都比35大；左邊node value都比35小。後面所有subtree 也都有這個特性。
 
-<img src="https://imgur.com/I1Ahpqe.png" />
+<img  class="img-fluid" src="https://imgur.com/I1Ahpqe.png" />
 
   
 
@@ -183,7 +183,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 2. 41比44做比較，41小於44，故往44的左邊node繼續執行
 3. 41與40做比較，41大於40，故往40的右邊node繼續執行，但因為40右邊node是空的，所以會將41新增於 40的 right node
 
-<img src="https://imgur.com/qUoXNbJ.png" />
+<img  class="img-fluid" src="https://imgur.com/qUoXNbJ.png" />
 
 ```java
     @Override
@@ -220,13 +220,13 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
 1. 當要刪除的node處於最尾端時，直接刪除
 
-<img src="https://imgur.com/8fkefhr.png" />
+<img  class="img-fluid" src="https://imgur.com/8fkefhr.png" />
 
 ​	如果要刪除 40 ，只需要將 44 的 left node 設為 null 即可。
 
 2. 當要刪除的node的 left node或right node一邊有資料時，要用child node取代目前node 位置
 
-   <img src="https://imgur.com/dCnFOdw.png" />
+   <img  class="img-fluid" src="https://imgur.com/dCnFOdw.png" />
 
    如果要刪除44，則只要將56取代掉44的位置即可。
 
@@ -236,15 +236,15 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
    將找到的value與要刪除的value node交換，交換後，再重新執行一次刪除動作即可，直接搭配圖片來看：
 
-<img src="https://imgur.com/HfsttRH.png" />
+<img  class="img-fluid" src="https://imgur.com/HfsttRH.png" />
 
 ​	如果要刪除35，則可以找左側value最大的node，或是右側最小的node
 
-<img src="https://imgur.com/Ha7brqN.png" />
+<img  class="img-fluid" src="https://imgur.com/Ha7brqN.png" />
 
 ​	左側最大為 32，右側做小為56，這邊選擇32 取代35
 
-<img src="https://imgur.com/5qevLWX.png" />
+<img  class="img-fluid" src="https://imgur.com/5qevLWX.png" />
 
 實際上只是將原本35 node value與 32 node value 交換，交換完成後，則刪除 32 左側node下之 35即可。
 
@@ -252,7 +252,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
 以下面這張二元樹來看，可以有幾種遍歷方式：
 
-<img src="https://imgur.com/SGPS6QL.png" />
+<img  class="img-fluid" src="https://imgur.com/SGPS6QL.png" />
 
 1. Pre-Order 前序遍歷
   遍歷順序為 root -> left -> right
@@ -366,19 +366,19 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 +  leftNodeSize算法：left subtree nodes count +1
 + 如果BST夠平衡的情況下，時間複雜度平均為O(LogN)，最糟為O(N)
 
-<img src="https://imgur.com/I1Ahpqe.png" />
+<img  class="img-fluid" src="https://imgur.com/I1Ahpqe.png" />
 
 假如要在上面的BST中查詢第 7 小的內容，則流程如下：
 
-<img src="https://imgur.com/tlF2b7u.png" />
+<img  class="img-fluid" src="https://imgur.com/tlF2b7u.png" />
 
 首先計算 root 35的 leftNodeSize為6， rank > leftNodeSize，可以知道rank =7 的node存在於右側subtree中，所以rank - leftNodeSize =1，繼續往右側subtree找第 1小的Node
 
-<img src="https://imgur.com/Eno2nDg.png" />
+<img  class="img-fluid" src="https://imgur.com/Eno2nDg.png" />
 
 到35的 right subtree後，計算 44的 leftNodeSize為 2，leftNodeSize > rank，可以知道 rank=1的node存在於 44的left subtree中，所以繼續往 44 left subtree中找第1小的 node。
 
-<img src="https://imgur.com/Lo6e3N4.png" />
+<img  class="img-fluid" src="https://imgur.com/Lo6e3N4.png" />
 
 到44的left subtree後，計算leftNodeSize為 1，與要查詢的rank相同，即找到要查詢的node，40即為整個Binary Search Tree中第 7小的value。
 

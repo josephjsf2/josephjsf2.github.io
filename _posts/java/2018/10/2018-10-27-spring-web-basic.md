@@ -109,29 +109,29 @@ INSERT INTO dbo.Person values(
   </dependencies>
 </project>
 ```
-<img src="https://i.imgur.com/OlNxFcJ.png" alt="pom.xml設定" title="pom.xml設定">
+<img  class="img-fluid" src="https://i.imgur.com/OlNxFcJ.png" alt="pom.xml設定" title="pom.xml設定">
 
 另外在專案上點**右鍵 ->  properties -> Deployment Assembly **，須要將Maven 加到路徑上
 
-<img src="https://i.imgur.com/2JpmHbe.png" alt="Deployment Assembly設定" title="Deployment Assembly設定">
+<img  class="img-fluid" src="https://i.imgur.com/2JpmHbe.png" alt="Deployment Assembly設定" title="Deployment Assembly設定">
 
 ### 1. 建立Dispatch Servlet
 建立Dispatch Servlet的目的在於過濾所有的請求，所有送往 Server端的請求，都會由Spring將請求送往Dispatch Servlet，再由Dispatch Servlet尋要對應的controller做處理。
 
 在專案上點右鍵新增 Servlet，接著將 **Use an existing Servlet class or JSP** 選項勾起，接著選 Browse，找到Spring 內的 **Dispatch Servlet**
 
-<img src="https://i.imgur.com/tkYTk1s.png" alt="新增DispatchServlet" title="新增DispatchServlet">
+<img  class="img-fluid" src="https://i.imgur.com/tkYTk1s.png" alt="新增DispatchServlet" title="新增DispatchServlet">
 
-<img src="https://i.imgur.com/KJa8Scw.png" alt="選擇DispatchServlet" title="選擇DispatchServlet">
+<img  class="img-fluid" src="https://i.imgur.com/KJa8Scw.png" alt="選擇DispatchServlet" title="選擇DispatchServlet">
 
 如果在選擇Dispatch Servlet時出現沒有可用的Servlet訊息時，可以嘗試到**專案 -> Properties -> Targeted Runtimes**，將要佈屬的 Tomcat勾起來，如果沒有則自己建立一個，在新增完畢後，應該就可以選擇DisptachServlet類別：
 
-<img src="https://i.imgur.com/rHv6EKK.png" alt="設定Targeted Runtimes" title="設定Targeted Runtimes">
+<img  class="img-fluid" src="https://i.imgur.com/rHv6EKK.png" alt="設定Targeted Runtimes" title="設定Targeted Runtimes">
 
 
 完成後會在web.xml內看見所加入的 Dispatch Servlet設定：
 
-<img src="https://i.imgur.com/R3wWYUc.png" alt="web.xml設定" title="web.xml設定">
+<img  class="img-fluid" src="https://i.imgur.com/R3wWYUc.png" alt="web.xml設定" title="web.xml設定">
 
 接著我們調整Servlet設定：
 
@@ -186,7 +186,7 @@ web.xml中的 DispatchServlet須要讀取 Bean的設定檔，沒有設定的情�
 
 接著在person-servlet.xml設定檔中，namespace中須還要額外啟用 context與 mvc 兩項：
 
-<img src="https://i.imgur.com/CI1pEin.png" alt="bean設定" title="bean設定">
+<img  class="img-fluid" src="https://i.imgur.com/CI1pEin.png" alt="bean設定" title="bean設定">
 
 接著加入下列設定：
 
@@ -379,7 +379,7 @@ public class PersonController {
 </html>
 ```
 
-<img src="https://i.imgur.com/cWZnfOb.png" alt="執行結果" title="執行結果">
+<img  class="img-fluid" src="https://i.imgur.com/cWZnfOb.png" alt="執行結果" title="執行結果">
 
 放在 ModelAndView的Model Map內的物件，可以在最後直接透過getAttribute存取。
 
@@ -453,7 +453,7 @@ index.jsp：
 **如果要在JSP中使用JSTL tag，則在最上方必須加入一行宣告。**
 執行結果如下：
 
-<img src="https://i.imgur.com/LQWvJmR.png" alt="執行結果" title="執行結果">
+<img  class="img-fluid" src="https://i.imgur.com/LQWvJmR.png" alt="執行結果" title="執行結果">
 
 這邊在model中放入一個特殊字串，然後分別透過三種方式呈現出來，
 SPEL可以直接取得 model 中的資料，所以直接透過 ${name}即可以取出資料；JSTL 的好處是預設就會過濾掉字串中的特殊字元，所以\<b\>與\</b\>字串就不會被視為html tag。
@@ -466,7 +466,7 @@ SPEL可以直接取得 model 中的資料，所以直接透過 ${name}即可以�
 
 1. 開啟 contex.xml：在 tomcat_dir/conf目錄下，可以找到 context.xml，我們可以在這個檔案內定義JNDI的來源。
 
-<img src="https://i.imgur.com/G35YqHn.png" alt="context.xml" title="context.xml">
+<img  class="img-fluid" src="https://i.imgur.com/G35YqHn.png" alt="context.xml" title="context.xml">
 2. 加入 MSSQL JDBC dependency
 要連MSSQL資料庫，必須先將MSSQL用的JDBC Driver加入 pom設定檔中
 
@@ -542,6 +542,6 @@ select * from Person
 </html>
 ```
 
-<img src="https://i.imgur.com/Gygxv6w.png" alt="連線測試" title="連線測試">
+<img  class="img-fluid" src="https://i.imgur.com/Gygxv6w.png" alt="連線測試" title="連線測試">
 
 到這邊後，從接收請求到畫面呈現，與連至資料庫的部分都沒問題了，下一篇會加入增刪改查的功能。

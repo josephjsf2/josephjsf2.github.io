@@ -125,15 +125,15 @@ dao-context.xml：
 
 同時為了要可以透過Autowired方式注入JNDI的 DataSource，須要額外啟用 JEE namespace：
 
-<img src="https://i.imgur.com/OqQ0pcp.png" alt="啟用jee" title="啟用jee">
+<img  class="img-fluid" src="https://i.imgur.com/OqQ0pcp.png" alt="啟用jee" title="啟用jee">
 
 
 
 接著在切換到JEE的頁簽，加上**jee:jndi-lookup**：
 
-<img src="https://i.imgur.com/tE51No2.png" alt="jee設定" title="jee設定">
+<img  class="img-fluid" src="https://i.imgur.com/tE51No2.png" alt="jee設定" title="jee設定">
 
-<img src="https://i.imgur.com/Lkl7CdG.png" alt="jee設定" title="jee設定">
+<img  class="img-fluid" src="https://i.imgur.com/Lkl7CdG.png" alt="jee設定" title="jee設定">
 
 jndi-name設定可以參考web.xml中對應到 Tomcat context.xml JNDI的設定，目的是讓Spring可以將JNDI 資源作為可注入的來源。
 
@@ -196,7 +196,7 @@ personDAO：
 	}
 ```
 
-<img src="https://imgur.com/T2aG0bM.png" alt="啟動設定" title="啟動設定">
+<img  class="img-fluid" src="https://imgur.com/T2aG0bM.png" alt="啟動設定" title="啟動設定">
 
 
 
@@ -322,7 +322,7 @@ index.jsp：
 
 執行結果：
 
-<img src="https://i.imgur.com/uUnVDPc.png" alt="執行結果" title="執行結果">
+<img  class="img-fluid" src="https://i.imgur.com/uUnVDPc.png" alt="執行結果" title="執行結果">
 
 到這邊已經基本串起整個資料流程了，由請求進入personController後，接著透過personService呼叫personDao將資料取出來，最後在personController內將所取出之資料寫入Model的Map中，在JSP由SPEL將資料取出並呈現在畫面上。
 

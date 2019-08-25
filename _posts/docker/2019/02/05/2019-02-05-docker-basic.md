@@ -30,11 +30,11 @@ docker search imageName
 
 Image 將會列出所有尋找之結果，並會標注是否為官方發佈版本
 
-<img src="https://i.imgur.com/rgo82ba.png" width="60%"alt="搜尋結果" title="搜尋結果"/>
+<img  class="img-fluid" src="https://i.imgur.com/rgo82ba.png" width="60%"alt="搜尋結果" title="搜尋結果"/>
 
 
 
-<img src="https://i.imgur.com/o8veP06.png" width="60%"/alt="搜尋結果" title="搜尋結果">
+<img  class="img-fluid" src="https://i.imgur.com/o8veP06.png" width="60%"/alt="搜尋結果" title="搜尋結果">
 
 ## 下載 images
 
@@ -97,7 +97,7 @@ docker run --name MyNginx -dt nginx
 ```
 docker ps
 ```
-<img src="https://i.imgur.com/BCx3W8h.png" width="60%" alt="執行結果" title="執行結果"/>
+<img  class="img-fluid" src="https://i.imgur.com/BCx3W8h.png" width="60%" alt="執行結果" title="執行結果"/>
 
 
 ## 進入 Container

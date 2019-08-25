@@ -1,47 +1,33 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
+title:              Joseph's blog
+email:              josephw@tuta.io
+description:        腦袋的洞在這裡補
+author:             Joseph
+baseurl:            "/"
+url:                "https://josephjsf2.github.io"
+
+# Social Profiles
+twitter_username:   
+github_username:    josephjsf2
+facebook_username:
+linkedin_username:
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-135933368-1 # out your google-analytics code
 
 
-# Permalinks
-permalink:        pretty
-# relative_permalinks: true
-
-# Setup
-title:            Joseph's
-tagline:          '靠筆記彌補記憶'
-description:      ''
-url:              https://josephjsf.github.io/
-baseurl:          "/"
-
-author:
-  name:           'Joseph'
-  url:            https://josephjsf.github.io
-
-paginate:         10
-
-# Custom vars
-version:          2.1.0
-
-github:
-  repo:           https://github.com/josephjsf
-
-
-paginate_path: "page:num"
-plugins: [jekyll-paginate, jekyll-gist, jekyll-seo-tag,jekyll-sitemap,jekyll/tagging]
+# Build settings
+markdown:           kramdown
+highlighter:        rouge
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-seo-tag
 
 tag_page_layout: tag_page
 tag_page_dir: tag
 tag_permalink_style: pretty
-tag_feed_layout: tag_feed
-tag_feed_dir: tag
 tag_page_data:
   sitemap: false
-
-# read more tag
-excerpt_separator: <!--more-->
-
----
-layout: default
-comments: true
----

@@ -14,7 +14,7 @@ tags:
 
 首先是前置工程，過程中會用到的程式，設定 pom.xml，由maven來協助管理library的dependency
 
-<img src="https://i.imgur.com/cymLUci.png" alt="drawing" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/cymLUci.png" alt="drawing" width="60%"/>
 
 建立Person.java：
 
@@ -184,7 +184,7 @@ ApplicationContext可以視為是 Spring的context，ClassPathXmlApplicationCont
 
 最後專案結構：
 
-<img src="https://i.imgur.com/V9yl9Ng.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/V9yl9Ng.png" width="60%"/>
 
 
 
@@ -239,7 +239,7 @@ beans.xml：
 
 執行後結果：
 
-<img src="https://i.imgur.com/AgQ7MTn.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/AgQ7MTn.png" width="60%"/>
 
 可以看到Person內的name與gender分別為Joseph與Male，而Hair則是注入了RedHair物件，所以透過getColor會拿到 RED；如果在beans.xml內，將原本hair的ref改為blueHair，則結果就會變成BLUE。
 
@@ -277,7 +277,7 @@ beans.xml：
 </beans>
 ```
 
-<img src="https://i.imgur.com/oT1JmjQ.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/oT1JmjQ.png" width="60%"/>
 
 而 Person物件內需要稍微做一些調整，程式原本是透過 constructor注入，所以定義了一個 constructor並傳入三個變數，這樣明確定義constructor的方式，表示 **Person物件只有這樣一個constructor**( 若物件未定義任何constructor，則預設會有一個沒有參數的constructor)，而Spring在建立物件時，實際上也是透過constructor來建立，這時候執行程式會拋出BeanCreationException Error，並指明<font color="red">**No default constructor**</font>的錯誤。
 
@@ -333,7 +333,7 @@ public class App {
 singleton：runtime只會建立一個實體物件，bean的建立與摧毀都由Spring管理
 prototype：每一次參考到bean，實際上都是 new 一個新物件出來，物件的摧毀要由**自己管控**
 
-<img src="https://i.imgur.com/kJaj9Gn.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/kJaj9Gn.png" width="60%"/>
 
 ## 4. **Bean 的 init method與destroy method**
 
@@ -346,7 +346,7 @@ destroy在執行applicationContext.close()時會調用，表示摧毀物件。
 
 
 
-<img src="https://i.imgur.com/eiTPY3w.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/eiTPY3w.png" width="60%"/>
 
 
 
@@ -356,7 +356,7 @@ Spring也可以針對個別的bean設定 init與 destroy方法，**如果default
 
 
 
-<img src="https://i.imgur.com/NYUCyBM.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/NYUCyBM.png" width="60%"/>
 
 Perosn.java：
 
@@ -407,13 +407,13 @@ public class BlueHair implements Hair {
 
 執行結果：
 
-<img src="https://i.imgur.com/CyxcE3y.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/CyxcE3y.png" width="60%"/>
 
 可以觀察到，RedHair一定會優先於Person被建立；在執行到close時，bean會分別調用destroy方法。
 
 這邊調整beans.xml，在BlueHair物件中另外設定init與destroy method：
 
-<img src="https://i.imgur.com/wIHqRd7.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/wIHqRd7.png" width="60%"/>
 
 BlueHair.java：
 
@@ -439,7 +439,7 @@ public class BlueHair implements Hair {
 ```
 最後運行程式：
 
-<img src="https://i.imgur.com/ftujlkx.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/ftujlkx.png" width="60%"/>
 
 BlueHair中的 init與destroy方法不會被調用，相對的只會調用 create與 burnHair method。
 
@@ -477,11 +477,11 @@ public class Person {
 
 接著在bean.xml內的Person Bean內找到factory-method，加上getInstance方法，如果getInstance需要傳入參數，則以 constructor傳入參數的方式傳入即可：
 
-<img src="https://i.imgur.com/oT23TVa.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/oT23TVa.png" width="60%"/>
 
 
 
-<img src="https://i.imgur.com/YDnYPsc.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/YDnYPsc.png" width="60%"/>
 
 跑起來後與透過constructor建立的Bean有一樣的效果
 
@@ -505,11 +505,11 @@ public class PersonFactory {
 
 接著在beans.xml內加入一個bean定義，
 
-<img src="https://i.imgur.com/d4ZAFaZ.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/d4ZAFaZ.png" width="60%"/>
 
 完成後在Person的Bean設定上加入 factory-bean，參考到剛剛建立的personFactory，並指明factory-method為PersonFactory內的getInstance方法，傳入的方式與先前相同
 
-<img src="https://i.imgur.com/v98o9pz.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/v98o9pz.png" width="60%"/>
 
 最後執行的結果會與之前相同。
 
@@ -517,15 +517,15 @@ public class PersonFactory {
 
 Spring的 bean定義檔中還有提供另一個注入方法，叫 p-namespace，預設這個功能是沒打開的，可以在下列的地方，將 p勾選起來， eclipse就會自動在xml內加入 namespace。
 
-<img src="https://i.imgur.com/llMNAIj.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/llMNAIj.png" width="60%"/>
 
 p namespace可以讓我們在 tag裡面設定注入的內容，如果是參考到其他bean，則要在屬性後面加上 -ref，下面改寫Person的 property注入方法：
 
-<img src="https://i.imgur.com/ae6mC8F.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/ae6mC8F.png" width="60%"/>
 
 其中name與gender都是直接輸入，hair的部分參考到其他bean，所以會用hair-ref來指向另一個bean，執行後如下，等同事先前的property 注入結果，效果是一樣的。
 
-<img src="https://i.imgur.com/ndy36fm.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/ndy36fm.png" width="60%"/>
 
 ## 7. Map & List注入方法
 
@@ -535,15 +535,15 @@ p namespace可以讓我們在 tag裡面設定注入的內容，如果是參考�
 
 Spring bean configuration file提供了gui介面可供設定，以Person的 hairMap來看，接受 key為String，value為Hair類別，同樣可以透過constructor或是property方式注入，如下圖所示：
 
-<img src="https://i.imgur.com/dNofWmI.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/dNofWmI.png" width="60%"/>
 
 在點選constructor或是 property後按下右鍵，eclipse就會有輔助視窗，提示可供使用的類型，在這邊加入 map
 
-<img src="https://i.imgur.com/5k9PGW6.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/5k9PGW6.png" width="60%"/>
 
 接著點選map後，右邊可以設定key與value類別，按下右鍵可以再繼續新增entry，也就是設定key與value
 
-<img src="https://i.imgur.com/40m1SG2.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/40m1SG2.png" width="60%"/>
 
 設定介面上，有ref的通常都是指向另一個bean設定，其餘的按照字面上意思設定即可，最後xml大致如下：
 
@@ -558,7 +558,7 @@ Spring bean configuration file提供了gui介面可供設定，以Person的 hair
 
 如果是設定比較單純的Map，如String/String，還可以考慮另一種作法，透過props來做到：
 
-<img src="https://i.imgur.com/Inj2JmO.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/Inj2JmO.png" width="60%"/>
 
 ```xml
 <property name="hairMap">
@@ -573,7 +573,7 @@ Spring bean configuration file提供了gui介面可供設定，以Person的 hair
 
 方法與Map大同小異，可以加入多種類別：
 
-<img src="https://i.imgur.com/zkbyifS.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/zkbyifS.png" width="60%"/>
 
 在這邊是為了加入Hair List，所以參考到另外兩個bean，要把另外兩個bean加入List中，可以選擇加入ref(這邊可以insert不同 element，都會視為 list內的物件)，指向red與blue兩個bean
 
@@ -588,7 +588,7 @@ Spring bean configuration file提供了gui介面可供設定，以Person的 hair
 
 要直接在list內建立新的bean也是可以的：
 
-<img src="https://i.imgur.com/Ff27Dtq.png" width="60%"/>
+<img  class="img-fluid" src="https://i.imgur.com/Ff27Dtq.png" width="60%"/>
 
 還可以直接在內部使用property或是constructor注入，結果都視為List內的一個物件。
 

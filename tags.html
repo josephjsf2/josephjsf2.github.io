@@ -1,0 +1,52 @@
+---
+layout: page
+title: Tags
+description:
+unsplashTag: 'nature'
+---
+<hr />
+{% assign alldocs = site.posts | uniq  %}
+{% assign grouptag =  alldocs | map: 'tags' | join: ','  | split: ',' | group_by: tag  %}
+{%- for tag in grouptag -%}
+{%- if tag.size > 3-%}
+<h2>{{- tag.name -}} - {{tag.size}}</h2>
+{%- for post in alldocs -%}
+<ul style="margin-bottom: 0em;">
+    {% if post.tags contains tag.name  %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} )
+    </li>
+    {% endif %}
+</ul>
+{%- endfor -%}
+{% endif %}
+{%- endfor -%}
+
+<div id="moreTags" class="collapse">
+    <hr />
+    {% assign alldocs = site.posts | uniq  %}
+    {% assign grouptag =  alldocs | map: 'tags' | join: ','  | split: ',' | group_by: tag  %}
+    {%- for tag in grouptag -%}
+    {%- if tag.size <= 3-%}
+    <h2>{{- tag.name -}} - {{tag.size}}</h2>
+    {%- for post in alldocs -%}
+    <ul style="margin-bottom: 0em;">
+        {% if post.tags contains tag.name  %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} )
+        </li>
+        {% endif %}
+    </ul>
+    {%- endfor -%}
+    {% endif %}
+    {%- endfor -%}
+</div>
+<div>
+    <a class="btn btn-primary" id="moreLink" data-toggle="collapse" href="#moreTags" role="button" aria-expanded="false"
+        aria-controls="moreTags" (onclick)="openMoreTags()">more</a>
+</div>
+<script>
+    function openMoreTags() {
+        document.getElementById('moreLink').style.visibility = 'hidden';
+    }
+</script>

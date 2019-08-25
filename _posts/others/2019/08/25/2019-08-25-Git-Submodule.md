@@ -5,6 +5,7 @@ categories: Git
 tags:
 - git
 - submodule
+unsplashTag: 'code'
 ---
 
 關於 git submodule 基本使用方式筆記。
@@ -15,7 +16,7 @@ submodule 方便在不同 git專案中重複使用其他 git 專案之程式碼�
 
 ## 新增 submodule
 
-```git
+```
 git submodule add :repo
 ```
 
@@ -23,7 +24,7 @@ git submodule add :repo
 
 接著透過下列指令對 submodule初始化，會從 repo將 submodule程式clone回來
 
-```git
+```
 git submodule init
 
 # 如果 submodule中還有 submodule
@@ -43,7 +44,7 @@ submodule也同樣是一個 github專案，所以切換到 submodule目錄下，
 
 在主目錄下，可以透過下列指令更新
 
-```git
+```
 git submodule update --remote
 ```
 
@@ -53,7 +54,7 @@ git submodule update --remote
 
 在更新 submodule後，進入 submodule目錄下可能會看見 HEAD detach 訊息，這個情境下，**如果當下有調整過 submodule目錄下程式，一定要小心操作，否則可能會遺失程式碼**，情境有三種：
 
-1. 未修改 submodule目錄出現 detach解決方式
+1.未修改 submodule目錄出現 detach解決方式
 
 ```
 git checkout master
@@ -61,9 +62,9 @@ git checkout master
 
 直接切換回submodule master branch
 
-2. 修改過 submodule目錄下程式後，出現 detach訊息解決方式
+2.修改過 submodule目錄下程式後，出現 detach訊息解決方式
 
-```git
+```
 # 建立一個臨時 branch
 git checkout -b :branchName
 
@@ -74,12 +75,13 @@ git checkout master
 git merge :branchName
 ```
 
-3. 要從 origin 上同步 submodule回來時
+3.要從 origin 上同步 submodule回來時
 
-```git
+```
 git submodule update --remote --merge
 or 
 git submodule update --remote --rebase
+
 ```
 
 

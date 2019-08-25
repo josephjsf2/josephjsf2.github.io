@@ -21,7 +21,7 @@ tags:
 ### 2. 在github上建立 repo
 在 github上建立一個 repository，這邊取名叫 github-page-demo
 
-<img src="https://imgur.com/lzpMwRT.png" width="600px" height="400px"/>
+<img  class="img-fluid" src="https://imgur.com/lzpMwRT.png" width="600px" height="400px"/>
 
   
 
@@ -32,7 +32,7 @@ tags:
 ng new github-page-demo
 ```
 
-<img src="https://imgur.com/lzpMwRT.png" width="600px" height="400px"/>
+<img  class="img-fluid" src="https://imgur.com/lzpMwRT.png" width="600px" height="400px"/>
 
 ### 4. 程式加入 remote設定
 
@@ -42,7 +42,7 @@ git remote add origin YOUR_GITHUB_URL
 
 Github Url 可以在剛剛建立的 repo上找到。
 
-<img src="https://imgur.com/rzO5wLZ.png"/>
+<img  class="img-fluid" src="https://imgur.com/rzO5wLZ.png"/>
 
 
 
@@ -54,7 +54,7 @@ ng serve
 
 接著打開瀏覽器，應可以看見網頁正常運作。
 
-<img src="https://imgur.com/9lGiqTX.png" width="700px" height="300px"/>
+<img  class="img-fluid" src="https://imgur.com/9lGiqTX.png" width="700px" height="300px"/>
 
   
 
@@ -86,11 +86,11 @@ ng build --prod --base-href=https://YOUR_GITHUB_ACCOUNT.github.io/github-page-de
 
 程式目錄下 index.html base href 設定：
 
-<img src="https://imgur.com/yrA8c6T.png" />
+<img  class="img-fluid" src="https://imgur.com/yrA8c6T.png" />
 
 打包後 index.html base href 設定，因為指定了 --base-href，所以改變了設定：
 
-<img src="https://imgur.com/nl5k2Mf.png"/>
+<img  class="img-fluid" src="https://imgur.com/nl5k2Mf.png"/>
 
 ### 8. 發佈至 github
 
@@ -103,7 +103,7 @@ ng build --prod --base-href=https://YOUR_GITHUB_ACCOUNT.github.io/github-page-de
 
 如果遇到 permission問題，可以在指令前方加入 sudo指令。
 
-<img src="https://imgur.com/TkLkY9Z.png"/>
+<img  class="img-fluid" src="https://imgur.com/TkLkY9Z.png"/>
 
 ### 9. 瀏覽網頁
 
@@ -111,7 +111,7 @@ ng build --prod --base-href=https://YOUR_GITHUB_ACCOUNT.github.io/github-page-de
 
 如我這邊的url就是 http://josephjsf2.github.io/github-page-demo
 
-<img src="https://imgur.com/yqREqNX.png"/>
+<img  class="img-fluid" src="https://imgur.com/yqREqNX.png"/>
 
 
 

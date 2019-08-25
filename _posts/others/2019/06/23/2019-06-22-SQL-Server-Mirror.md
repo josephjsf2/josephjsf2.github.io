@@ -39,11 +39,11 @@ SQL Server目前應該有更好的機制，這次我使用到的是鏡像的功�
 
 SQL Server：  
 
-<img src="https://imgur.com/l5md9ii.png"/>
+<img  class="img-fluid" src="https://imgur.com/l5md9ii.png"/>
 
 SQL Server Agent：  
 
-<img src="https://imgur.com/pVBVJ4E.png"/>
+<img  class="img-fluid" src="https://imgur.com/pVBVJ4E.png"/>
 
 
 
@@ -62,61 +62,61 @@ BACKUP LOG YOUR_DB_NAME to disk=N'PATH_TO_FILE\backup.trn'
 
    1. 將資料庫還原至鏡像資料庫  
 
-   <img src="https://imgur.com/npw2mrI.png" width="400" height="400">
+   <img  class="img-fluid" src="https://imgur.com/npw2mrI.png" width="400" height="400">
    
    2. 選擇檔案來源  
-   <img src="https://imgur.com/vjBuleg.png" width="600" height="600"/>
+   <img  class="img-fluid" src="https://imgur.com/vjBuleg.png" width="600" height="600"/>
    
    3. 必須選擇 <u>RESTORE WITH NORECOVERY </u> 
    
-   <img src="https://imgur.com/RBdWe1W.png" width="600" height="400"/>
+   <img  class="img-fluid" src="https://imgur.com/RBdWe1W.png" width="600" height="400"/>
    
    4. 還原後，資料庫上會顯示**正在還原**  
-    <img src="https://imgur.com/D1UnNMR.png" width="400" height="400"/>
+    <img  class="img-fluid" src="https://imgur.com/D1UnNMR.png" width="400" height="400"/>
    5. 還原交易紀錄  
-       <img src="https://imgur.com/UVO22uP.png" width="600" height="400"/>
+       <img  class="img-fluid" src="https://imgur.com/UVO22uP.png" width="600" height="400"/>
    6. 選擇來源  
-       <img src="https://imgur.com/LxpiaIT.png" width="600" height="400"/>
+       <img  class="img-fluid" src="https://imgur.com/LxpiaIT.png" width="600" height="400"/>
        
    7. 還原選項中必須選擇RESTORE WITH NORECOVERY  
-       <img src="https://imgur.com/TyIZv3Q.png" width="600" height="400"/>
+       <img  class="img-fluid" src="https://imgur.com/TyIZv3Q.png" width="600" height="400"/>
 
 ### 4. 鏡像設定
 
 1. 至主體資料庫(Principal) ，選擇鏡像  
-      <img src="https://imgur.com/YhDE88y.png" width="500" height="300"/>
+      <img  class="img-fluid" src="https://imgur.com/YhDE88y.png" width="500" height="300"/>
       
 2. 選擇設定安全性  
-      <img src="https://imgur.com/a2WqkKP.png" width="500" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/a2WqkKP.png" width="500" height="400"/>
 3. 選擇下一步  
-      <img src="https://imgur.com/iIMDnlg.png" width="500" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/iIMDnlg.png" width="500" height="400"/>
       
 4. 因為這次鏡像沒有見證(Witness)主機，故選擇否，並按下一步  
-      <img src="https://imgur.com/ycJthoK.png" width="500" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/ycJthoK.png" width="500" height="400"/>
       
 5. 確認主體資料庫資訊與使用之Port號  
-      <img src="https://imgur.com/yCTlzfa.png" width="500" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/yCTlzfa.png" width="500" height="400"/>
       
 6. 設定鏡像資料庫主機使用之Port號與連線資訊，選擇好鏡像資料庫主機後點選連接，確保可憐至鏡像資料庫中  
-      <img src="https://imgur.com/wl0r1fZ.png" width="500" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/wl0r1fZ.png" width="500" height="400"/>
       
 7. 若未加入DOMAIN，則直接選擇下一步  
-      <img src="https://imgur.com/W1eebjh.png" width="500" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/W1eebjh.png" width="500" height="400"/>
       
 8. 最後確認資訊  
-      <img src="https://imgur.com/5Cgeh2n.png" width="500" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/5Cgeh2n.png" width="500" height="400"/>
       
 9. 按下完成後，會開始建立鏡像設定  
-      <img src="https://imgur.com/jgOcdFZ.png" width="600" height="500"/>
+      <img  class="img-fluid" src="https://imgur.com/jgOcdFZ.png" width="600" height="500"/>
       
 10. 等待設定完成  
-      <img src="https://imgur.com/Xe1GCcG.png" width="600" height="500"/>
+      <img  class="img-fluid" src="https://imgur.com/Xe1GCcG.png" width="600" height="500"/>
     
 11. 完成後，會詢問是否啟動鏡像，直接選擇啟動即可  
-      <img src="https://imgur.com/DuStyKZ.png" width="600" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/DuStyKZ.png" width="600" height="400"/>
     
 12. 如果出現這個錯誤，表示當下使用的SSMS可能是 2016版本，這是一個存在於SSMS 2016 版的 bug，可以改使用其他版本，如SSMS 2014來執行就可以解決，或是改以指令方式執行即可。  
-      <img src="https://imgur.com/WGC9IY2.png" width="600" height="400"/>
+      <img  class="img-fluid" src="https://imgur.com/WGC9IY2.png" width="600" height="400"/>
     
 13. 以指令方式執行，必須先至鏡像資料庫上輸入下列指令  
 ```sql
@@ -130,14 +130,14 @@ ALTER DATABASE YOUR_DB_NAME SET PARTNER = 'TCP://MIRROR_DB_IP:5022'
 
 15. 設定完成後可以看見資料庫上之訊息  
 主體資料庫：  
-      <img src="https://imgur.com/Sr3zO1L.png" width="300" height="200"/>
+      <img  class="img-fluid" src="https://imgur.com/Sr3zO1L.png" width="300" height="200"/>
 
 鏡像資料庫：  
-      <img src="https://imgur.com/tkdVgRJ.png" width="300" height="200"/>
+      <img  class="img-fluid" src="https://imgur.com/tkdVgRJ.png" width="300" height="200"/>
     
 
 16. 鏡像設定檔會存在於**伺服器物件 -> 端點 -> 資料庫鏡像**  
-      <img src="https://imgur.com/ckBFHwa.png" width="300" height="300"/>
+      <img  class="img-fluid" src="https://imgur.com/ckBFHwa.png" width="300" height="300"/>
 
 到這邊基本上已經設定完成，如果有遇到其他錯誤代碼為 1418 之錯誤，可參考下列連結之建議處理：  
 [Suggestions for 1418](https://blog.sqlauthority.com/2010/01/11/the-server-network-address-tcpsqlserver5023-can-not-be-reached-or-does-not-exist-check-the-network-address-name-and-that-the-ports-for-the-local-and-remote-endpoints-are-operational-microso/)  
