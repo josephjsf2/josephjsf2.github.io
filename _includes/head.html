@@ -26,9 +26,7 @@
   <link rel="shortcut icon" href="{{ site.baseurl }}public/favicon.ico">
   <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}">
   <!-- Only for post -->
-  {% unless page.url contains 'about' %}
   <link rel="stylesheet" href="{{"/assets/layout.css" | relative_url }}">
-  {% endunless%}
   <!-- Only for post -->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
