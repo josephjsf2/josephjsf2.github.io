@@ -45,7 +45,7 @@ tags:
 
 以下列圖片序列來看， 5號的位置原本在 index-4，如果往前賄賂兩個人後，位置最多只能前進到 index-2，不可能再往前，如果有更往前的情況，則違反規則。
 
-<img class="img-fluid"src="https://imgur.com/CjjRRB9.png"/>
+<img class="img-fluid" src="https://imgur.com/CjjRRB9.png"/>
 
 上面情況來推論，可以得知原本在 index-i 上的內容，如果在有賄賂其他人情況下，最後位置可能會往前到 i-1 與 i-2的位置上。
 
@@ -53,23 +53,23 @@ tags:
 
 當index-4的情況，因為 index-4 原本應該為 5號，目前為4號，所以會往 index-3與 index-2找尋 5號，找到後逐漸將 5號推回 index-4的位置，同時計算賄賂的次數。
 
-<img class="img-fluid"src="https://imgur.com/HgwfPaU.png"/>
+<img class="img-fluid" src="https://imgur.com/HgwfPaU.png"/>
 
 index-3 正確內容為 4號，現在陣列上 index-3 也是4號，處於正確位置，所以進行下一輪迴圈。
 
 index-2 正確內容為 3號，現在陣列上 index-2 也是3號，處於正確位置，所以進行下一輪迴圈。
 
-<img class="img-fluid"src="https://imgur.com/aDRU5bh.png"/>
+<img class="img-fluid" src="https://imgur.com/aDRU5bh.png"/>
 
 index-1 正確內容為 2號，但陣列上目前為 1號，所以往 index-0找到 2號，因此與 index-1交換，讓2號回到 index-1，同時計算賄賂次數。
 
-<img class="img-fluid"src="https://imgur.com/NC540s4.png"/>
+<img class="img-fluid" src="https://imgur.com/NC540s4.png"/>
 
 index-0 正確內容為 1號，陣列上index-0為 1號，處於正確位置，所以不做處理。
 
 做完全不後陣列內容也會回覆成最初使的狀態，變成排序過的結果。
 
-<img class="img-fluid"src="https://imgur.com/gorW2Cp.png"/>
+<img class="img-fluid" src="https://imgur.com/gorW2Cp.png"/>
 
 概念大致如上，因此寫成程式碼的大概是下面的樣子：
 
@@ -116,7 +116,7 @@ function swap(arr, index1, index2){
 
 從下面圖片來看，這是最初的排隊列表，如果現在要計算 3號接受過的賄賂次數，則『賄賂過 3 號的人**最遠**的位置只能到 2 號的位置，意思是賄賂了 3 號與 2 號( 最多賄賂2次原則 )』，也就是『 **<u>賄賂過 index-i 的人最遠可以排到 index-(i-1) 的位置上</u>**』
 
-<img class="img-fluid"src="https://imgur.com/6wDzfRW.png" />
+<img class="img-fluid" src="https://imgur.com/6wDzfRW.png" />
 
 先有了上面的概念後，接著來看下面的情況：
 
@@ -139,7 +139,7 @@ function swap(arr, index1, index2){
 
 5. 計算 index-1 到 index-2 間比 3號大的數字數量，即為 3 號接受賄賂的次數，在這邊可以算出是 1
 
-<img class="img-fluid"src="https://imgur.com/dLMoJo4.png" />
+<img class="img-fluid" src="https://imgur.com/dLMoJo4.png" />
 
 再來一個情況：
 
@@ -149,7 +149,7 @@ function swap(arr, index1, index2){
 4. 1 - 4  = -3  符合題目規定
 5. 計算 index-0 到 index-3間比 2號大的數字數量，即為 2 號接受賄賂的次數，在這邊可以算出是 3
 
-<img class="img-fluid"src="https://imgur.com/ziYnakO.png"/>
+<img class="img-fluid" src="https://imgur.com/ziYnakO.png"/>
 
 透過這個方式，就可以寫出最後的程式：
 
