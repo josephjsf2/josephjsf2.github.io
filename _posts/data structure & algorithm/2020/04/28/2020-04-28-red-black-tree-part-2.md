@@ -117,7 +117,7 @@ TRANSPLANT(T, u, v)
 
 如果z節點位置的子節點有兩個，透過二元樹執行刪除時，會找到 z 節點的 successor 節點位置 y，表示 y 位置節點會取代掉 z位置節點 ( 將 y 節點位置移至 z 節點位置，表示 y 位置的節點實際上被刪除了)，且 y 的顏色也會調整為 z 的顏色，而 x 位置節點表示當 y 取代 z的位置後，要遞補至原本 y 位置的節點。這個過程中，<u>需要記錄最初找到 y 時 y 節點的顏色。</u>
 
-<img class="img-fluid" src="https://imgur.com/RKtnNrZ.png"/>
+<img class="img-fluid" src="https://imgur.com/6rp8YkQ.png"/>
 
 ## 刪除後調整
 
