@@ -116,7 +116,7 @@ smb.conf還有相當多的設定可以調整，這邊僅列出一部份，有其
 >
 >path：欲共享的目錄路徑
 >
->browsable：
+>browsable：控制是否在網路上顯示
 >
 >writable：是否可寫入，如果設為no，Client端將沒辦法對資料夾或檔案做寫入的動作
 >
