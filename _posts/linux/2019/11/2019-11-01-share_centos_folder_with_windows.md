@@ -72,7 +72,7 @@ smb.conf
 	 
 	security = user
 	passdb backend = tdbsam
-
+        ntlm auth = yes # 如果要讓 Windows 掛載，則需要設定成 YES
  
 [ShareFolder]
 	comment =Shared
@@ -86,7 +86,7 @@ smb.conf
 	valid users = root   # 必須是Linux上存在的user
 ```
 
-smb.conf還有相當多的設定可以調整，這邊僅列出一部份，有其他更細節之設定，因為沒用到就沒提到了，其餘可以參考官方上的說明，有所有smb.conf設定：[smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)，設定完成後，**可以透過testparm 測試 smb.conf設定檔**
+smb.conf還有相當多的設定可以調整，這邊僅列出一部份，有其他更細節之設定，因為沒用到就沒提到了，其餘可以參考官方上的說明，有所有smb.conf設定：[smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)，設定完成後，**可以透過testparm 測試 smb.conf設定檔設定是否正確**
 
 針對上面設定，這邊做一個簡單的紀錄
 
@@ -108,7 +108,7 @@ smb.conf還有相當多的設定可以調整，這邊僅列出一部份，有其
 >
 >​	預設路徑於 /var/lib/samba/private/passdb.tbd，private目錄為隱藏目錄，且必需要有足夠權限才可進入與檢	視
 >
->
+>ntlm auth: 允許使用NTLM 認證，目前測試 samba 必須設定成 yes 才可以在 windows 上成功掛載
 >
 >[SharedFolder]：表示在網路芳鄰上顯示的名稱，smb.conf中可以存在多個 [ ]區塊，表示不同的分享目錄與設定
 >
@@ -128,12 +128,17 @@ smb.conf還有相當多的設定可以調整，這邊僅列出一部份，有其
 >
 >​	如 root, @user 表示允許root帳號與 @user群組中的帳號使用
 
+驗證設定是否正確：
+```bash
+sudo testparm
+```
+
 
 
 ##  建立 Samba 存取帳號之密碼
 
 前面smb.conf中 passdb backend設定為tdbsam，這邊透過smbpasswd建立對應帳號，建立的同時會一併設定登入密碼，資料會寫入 passdb.tdb 中
-
+這邊使用的帳號必須是系統上的帳號才可，否則會出現『Failed to add entry for user test.』錯誤
 ```bash
 smbpasswd -a joseph
 ```
@@ -236,6 +241,19 @@ SELINUX=disable #永久關閉SELINUX
 <img class="img-fluid" src="https://imgur.com/GP0BjwX.png"/>
 
 同樣的，在CentOS上新增也會立即反應至Windows上所見項目，因為存取的是同一個位置。
+
+## 在CentOS上存取CentOS目錄
+只需要透過指令並輸入密碼，就可以連到另一台主機的Samba
+
+```bash
+
+smbclient //{{IP}}/{{section}} -U account
+
+# 以上面範例來看
+smbclient //10.0.2.15/ShareFolder -U joseph
+
+```
+
 
 ## 結語
 
