@@ -247,7 +247,7 @@ SELINUX=disable #永久關閉SELINUX
 
 ```bash
 
-smbclient //{{IP}}/{{section}} -U account
+smbclient //{IP}/{section} -U account
 
 # 以上面範例來看
 smbclient //10.0.2.15/ShareFolder -U joseph
