@@ -69,7 +69,10 @@ smb.conf
  
 	log file = /var/log/samba/log.%m   
 	max log size = 500    
-	 
+	
+	# 建議設定為 mandatory
+	server signing = mandatory 
+	
 	security = user
 	passdb backend = tdbsam
         ntlm auth = yes # 如果要讓 Windows 掛載，則需要設定成 YES
