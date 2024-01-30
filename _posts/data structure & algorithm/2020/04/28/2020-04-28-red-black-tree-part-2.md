@@ -30,7 +30,7 @@ tags:
 
 ## 樹的節點轉換(Transplant)
 
-Transplant 用途在於傳入 u與 v兩個節點， v 將會取代 u 的位置，過程會在 transplant 中調整 u.p child 指向與 v.p 指向節點，讓原本 u.p 指向 v，同時 v.p指向 u.p
+Transplant 用途在於傳入 u與 v兩個節點， v 將會取代 u 的位置，過程會在 transplant 中調整 u.p child 指向與 v.p 指向節點，讓原本 u.p 的child指向 v，同時 v.p指向 u.p
 
 ```java
 TRANSPLANT(T, u, v)
